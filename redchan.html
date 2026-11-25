@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>red chan</title>
+</head>
+<body style="background-color: rgb(255, 255, 238)">
+
+<img src="banner.png" alt="banner" style="max-width: 48%; height: auto;">
+<h1>just talk </h1>
+
+<style>
+body {
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center-right;
+}
+body p {
+border: 2px solid red;
+padding: 2px;
+
+
+</style>
+<div class="post-creator">
+<textarea id="post-input" placeholder="text here"></textarea>
+<button type="button" id="create-post-btn">chat</button>
+</div>
+<div id="feed"></div>
+<script>
+document.getElementById('create-post-btn').onclick = () => {
+const input = document.getElementById('post-input');
+if (!input.value.trim()) return;
+document.getElementById('feed').innerHTML += `<p>${input.value}</p>`;
+input.value = '';
+};
+ 
+ const user = prompt("enter name")
+ 
+ document.getElementById('create-post-btn').onclick = () => {
+ const input = document.getElementById('post-input');
+ if (input.value.trim()) document.getElementById('feed').innerHTML += `<p><b>${user}:</b> ${input.value}</p>`;
+ input.value = '';
+ };
+
+
+</script>
+</body>
+</html>
